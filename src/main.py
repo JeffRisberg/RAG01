@@ -8,3 +8,8 @@ input_dict = tokenizer.prepare_seq2seq_batch("who holds the record in 100m frees
 
 generated = model.generate(input_ids=input_dict["input_ids"])
 print(tokenizer.batch_decode(generated, skip_special_tokens=True)[0])
+
+input_dict = tokenizer.prepare_seq2seq_batch("when was the apollo 11 landing", return_tensors="pt")
+
+generated = model.generate(input_ids=input_dict["input_ids"])
+print(tokenizer.batch_decode(generated, skip_special_tokens=True)[0])
